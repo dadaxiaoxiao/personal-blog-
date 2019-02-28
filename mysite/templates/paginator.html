@@ -1,0 +1,18 @@
+<br/><br/>
+<div id="pagination" class="row text-center">
+    <tr id="pagination-flickr">
+    {% if page.has_previous  %}
+    <td class="previous"><a href="?page={{ page.previous_page_number }}{% if request.GET.year %}&year={{ request.GET.year }}{% endif %}{% if request.GET.month %}&month={{ request.GET.month }}{% endif %}{% if request.GET.cid %}&cid={{ request.GET.cid }}{% endif %}">&laquo;上一页</a></td>
+    {% else %}
+    <td class="previous-off">&laquo;上一页</td>
+    {% endif %}
+
+     <td class="active">{{ page.number }}/{{ page.paginator.num_pages }}</td>
+    {% if page.has_next %}
+      <td class="next"><a href="?page={{ page.next_page_number }}{% if request.GET.year %}&year={{ request.GET.year }}{% endif %}{% if request.GET.month %}&month={{ request.GET.month }}{% endif %}{% if request.GET.cid %}&cid={{ request.GET.cid }}{% endif %}">下一页 &raquo;</a></td>
+    {% else %}
+      <td class="next-off">下一页 &raquo;</td>
+    {% endif %}
+   </tr>
+    <br/><br/><br/><br/><br/><br/>
+</div>
